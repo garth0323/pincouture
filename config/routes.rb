@@ -1,6 +1,16 @@
 Pincouture::Application.routes.draw do
-  get "users/new"
-  get "users/index"
+  
+  root to: "pages#home"
+  resources :users
+  get '/about', to: 'pages#about'
+  resources :pins
+  
+
+  get '/register', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

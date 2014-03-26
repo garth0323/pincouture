@@ -11,12 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325053507) do
+ActiveRecord::Schema.define(version: 20140326015505) do
+
+  create_table "celebrities", force: true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pins", force: true do |t|
+    t.string   "description"
+    t.integer  "celebrity_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.string   "apparel"
+    t.string   "link"
+    t.string   "price"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "clebrity_id"
+    t.integer  "pin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "username"
     t.string   "email"
-    t.string   "encrypted_password"
+    t.string   "password_digest"
     t.integer  "posts"
     t.datetime "created_at"
     t.datetime "updated_at"
