@@ -1,5 +1,33 @@
-<%= bootstrap_form_for '/login' do |f| %>
-  <%= f.text_field :username %>
-  <%= f.password_field :password %>
-  <%= f.submit "Login", class: 'btn btn-primary' %>
-<% end %>
+<div class="container">
+  	<div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        
+        <img class="img-circle img-responsive center-block" src="//placehold.it/200">
+        
+        <br><br>
+      </div>
+  	</div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          	<div class="well">
+              <form role="form">
+                <div class="form-group">
+                  <label class="control-label">E-Mail</label>
+                  <input class="form-control" id="inputSuccess1" placeholder="hello@example.com" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="control-label">Passwort</label>
+                  <input class="form-control" id="inputSuccess2" placeholder="******" type="password">
+                </div>
+                <div class="form-group">
+                  
+                  <button type="button" class="btn btn-primary btn-block">Login</button>
+                  
+                </div>
+                
+                </div>
+              </form>
+          </div>
+      	</div>
+    </div>
+</div>
