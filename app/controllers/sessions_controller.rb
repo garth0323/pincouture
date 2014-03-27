@@ -2,10 +2,9 @@ class SessionsController < ApplicationController
 	def new
 	end
 
-	def create
-		binding.pry
-		user = User.where(username: params[:username]).first
-		if user && user.authenticate(params[:password])
+	def create 
+    user = User.where(params[:email]).first
+		if user && user.authenticate(params[:session][:password])
 			session[:user_id] = user.id
 			flash[:notice] = "Welcome"
 			redirect_to root_path
