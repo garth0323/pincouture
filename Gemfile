@@ -8,6 +8,8 @@ gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'bootstrap_form'
 gem 'paperclip', '~> 3.0'
+gem 'jquery-turbolinks'
+gem 'masonry-rails', '~> 0.2.0'
 
 
 gem 'jquery-rails'
