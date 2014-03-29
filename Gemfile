@@ -12,6 +12,7 @@ gem 'jquery-turbolinks'
 gem 'masonry-rails', '~> 0.2.0'
 
 
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
