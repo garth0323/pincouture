@@ -1,6 +1,6 @@
 Pincouture::Application.routes.draw do
   
-  root to: "pages#home"
+  root to: "pins#index"
   resources :users
   get '/about', to: 'pages#about'
   resources :pins
