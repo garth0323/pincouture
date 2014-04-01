@@ -1,0 +1,8 @@
+<%= bootstrap_form_for @user do |f| %>
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
+  <%= f.email_field :email %>
+  <%= f.text_field :username %>
+  <%= f.password_field :password %>
+  <%= f.submit "Update Profile", class: 'btn btn-large btn-primary' %>
+<% end %>

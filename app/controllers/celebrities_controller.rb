@@ -21,6 +21,10 @@ class CelebritiesController < ApplicationController
 		end
   end
 
+  def show
+  	@celebrity = Celebrity.find(params[:id])
+  end
+
   private
 
 	def celebrity_params

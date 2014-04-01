@@ -4,16 +4,24 @@
   <div class="col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading center">
+        <p><strong><%= link_to @pin.celebrity.name, celebrity_path(@pin.celebrity) %></strong></p>
         <%= image_tag @pin.image.url(:medium) %>
       </div>
       <div class="panel-body">
         <p><%= @pin.description %></p>
         <p><strong><%= @pin.user.username if @pin.user %></strong></p>
-
-        <% if @pin.user == current_user %>
-         <%= link_to 'Edit', edit_pin_path(@pin) %>
+        <% if current_user && @pin.user == current_user %>
+          <div class="actions">
+            <%= link_to edit_pin_path(@pin) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
         <% end %>
-
       </div>
     </div>
   </div>
