@@ -34,12 +34,10 @@ ActiveRecord::Schema.define(version: 20140328034135) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
-    t.string   "apparel"
+    t.string   "host"
     t.string   "link"
-    t.string   "price"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "clebrity_id"
     t.integer  "pin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
