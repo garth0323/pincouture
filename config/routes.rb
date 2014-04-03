@@ -4,6 +4,9 @@ Pincouture::Application.routes.draw do
   resources :users
   get '/about', to: 'pages#about'
   resources :pins
+    resources :pins do
+      resources :posts
+    end
   resources :celebrities
   
 

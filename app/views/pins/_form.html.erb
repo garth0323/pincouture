@@ -17,11 +17,10 @@
   </div>
  <div class="form-group">
     <%= f.label :celebrity_id %><br />
-    <%= f.select :celebrity_id, options_for_select(@celebrity.collect{ |c| [c.name, c.id]})%>
+    <%= f.select :celebrity_id, options_for_select(@celebrity.collect{ |c| [c.name, c.id]}) %>
   </div>
   <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
+    <%= text_field_tag :image_url %>
   </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>

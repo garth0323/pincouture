@@ -1,6 +1,11 @@
 class Pin < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :celebrity
-	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" } 
+	has_many :posts
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+
+	def image_from_url(url)
+    self.image = open(url)
+  end
 end
 

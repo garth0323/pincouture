@@ -1,0 +1,6 @@
+<%= form_for [@pin, @post], html: { multipart: true } do |f| %>
+  <div class="form-group">
+    Add URL here: <%= text_field_tag :retail_site %>
+    <%= f.submit class: "btn btn-info" %>
+  </div>
+<% end %>

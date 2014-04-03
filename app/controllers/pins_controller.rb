@@ -20,6 +20,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
+    @pin.image_from_url(params[:image_url])
     @celebrity = Celebrity.all
     if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created.'
