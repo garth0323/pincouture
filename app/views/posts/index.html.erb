@@ -1,0 +1,11 @@
+<div id="pins" class="transitions-enabled">
+
+  <% @posts.each do |post| %>
+    <div class="box panel panel-default">
+      <%= link_to image_tag(post.image.url(:medium)), post.link %>
+      <div class="panel-body">
+        <%= post.user.username %>
+      </div>
+    </div>
+  <% end %>
+</div>

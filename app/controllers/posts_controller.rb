@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   before_action :require_user, except: [:show, :index]
 
   def index
+    @pin = Pin.find(params[:pin_id])
+    @posts = @pin.posts.order("created_at DESC")
   end
 
   def show
@@ -21,7 +23,7 @@ class PostsController < ApplicationController
     @pin = Pin.find(params[:pin_id])
     page = MetaInspector.new(params[:retail_site])
     @post = @pin.posts.create(title: page.title, host: page.host, link: page.url, description: page.description, 
-                              user_id: current_user[:id], pin_id: params[:pin_id])
+                              user_id: current_user[:id], pin_id: params[:pin_id], image: page.image)
     
     if @post.save
       redirect_to root_path, notice: 'Confirm Info on Post.' #change when posts are made
