@@ -5,6 +5,8 @@
       <%= link_to image_tag(post.image.url(:medium)), post.link %>
       <div class="panel-body">
         <%= post.user.username %>
+        <strong><%= link_to post.host, post.link %></strong>
+        <%= post.title %>
       </div>
     </div>
   <% end %>

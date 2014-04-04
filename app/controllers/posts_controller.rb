@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    
+    @pin = Pin.find(params[:pin_id])
+    @post = @pin.post.find(params[:id])
   end
 
   def create
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
                               user_id: current_user[:id], pin_id: params[:pin_id], image: page.image)
     
     if @post.save
-      redirect_to root_path, notice: 'Confirm Info on Post.' #change when posts are made
+      redirect_to edit_pin_post_path(@pin, @post), notice: 'Confirm Info on Post.' #change when posts are made
     else
       render action: 'new'
     end
