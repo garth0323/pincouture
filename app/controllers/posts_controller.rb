@@ -17,17 +17,17 @@ class PostsController < ApplicationController
 
   def edit
     @pin = Pin.find(params[:pin_id])
-    @post = @pin.post.find(params[:id])
+    @post = @pin.posts.find(params[:id])
   end
 
   def create
     @pin = Pin.find(params[:pin_id])
-    page = MetaInspector.new(params[:retail_site])
+    page = MetaInspector.new(params[:post][:link])
     @post = @pin.posts.create(title: page.title, host: page.host, link: page.url, description: page.description, 
                               user_id: current_user[:id], pin_id: params[:pin_id], image: page.image)
     
     if @post.save
-      redirect_to edit_pin_post_path(@pin, @post), notice: 'Confirm Info on Post.' #change when posts are made
+      redirect_to edit_pin_post_path(@pin, @post), notice: 'Confirm Info and Picture of Clothing' #change when posts are made
     else
       render action: 'new'
     end

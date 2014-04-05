@@ -6,7 +6,18 @@
       <div class="panel-body">
         <%= post.user.username %>
         <strong><%= link_to post.host, post.link %></strong>
-        <%= post.title %>
+        <% if current_user && post.user == current_user %>
+          <div class="actions">
+            <%= link_to edit_pin_post_path(@pin, post) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>

@@ -4,3 +4,8 @@
     <%= f.submit class: "btn btn-info" %>
   </div>
 <% end %>
+
+<%= bootstrap_form_for [@pin, @post], html: { multipart: true } do |f| %>
+    <%= f.text_field :link %>
+    <%= f.submit class: "btn btn-info" %>
+<% end %>

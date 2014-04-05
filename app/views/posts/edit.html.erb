@@ -1,13 +1,8 @@
-<%= form_for @post, html: { multipart: true } do |f| %>
+<%= bootstrap_form_for  @post, url: {action: "update"}, html: { multipart: true } do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_field :description %>
   <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %><br />
-    <%= f.text_area_tag :descrption, class: "form-control" %>
-  </div>
-  <div class="form-group">
+    <p>URL:</p>
     <%= text_field_tag :image_url %>
   </div>
   <div class="form-group">
