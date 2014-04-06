@@ -8,12 +8,17 @@
   background: #E86CE8;
 }
 
-#myCarousel .nav a small {
-    display:block;
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
 }
-#myCarousel .nav {
-	background:#eee;
+.carousel .item img {
+    width: 100%; /*img width*/
 }
-#myCarousel .nav a {
-    border-radius:0px;
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 }

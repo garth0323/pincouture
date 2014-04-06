@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:show, :index]
+  before_action :set_pin, only: [:new, :index, :edit, :create]
 
   def index
-    @pin = Pin.find(params[:pin_id])
     @posts = @pin.posts.order("created_at DESC")
   end
 
@@ -11,17 +11,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @pin = Pin.find(params[:pin_id])
     @post = @pin.posts.build
   end
 
   def edit
-    @pin = Pin.find(params[:pin_id])
     @post = @pin.posts.find(params[:id])
   end
 
   def create
-    @pin = Pin.find(params[:pin_id])
     page = MetaInspector.new(params[:post][:link])
     @post = @pin.posts.create(title: page.title, host: page.host, link: page.url, description: page.description, 
                               user_id: current_user[:id], pin_id: params[:pin_id], image: page.image)
@@ -50,6 +47,10 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_pin
+      @pin = Pin.find(params[:pin_id])
     end
 
     def correct_user
