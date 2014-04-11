@@ -22,3 +22,13 @@
         margin-right: -20px;
     }
 }
+
+body.modal-open #wrap{
+    -webkit-filter: blur(14px);
+    -moz-filter: blur(30px);
+    -o-filter: blur(30px);
+    -ms-filter: blur(30px);
+    filter: blur(30px);
+}
+  
+.modal-backdrop {background: #f7f7f7;}

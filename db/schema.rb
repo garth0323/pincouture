@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404030121) do
+ActiveRecord::Schema.define(version: 20140406173523) do
 
   create_table "celebrities", force: true do |t|
     t.string   "name"
     t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hangs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,8 +55,6 @@ ActiveRecord::Schema.define(version: 20140404030121) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"

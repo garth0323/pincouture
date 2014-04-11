@@ -6,6 +6,10 @@ Pincouture::Application.routes.draw do
   resources :pins
     resources :pins do
       resources :posts
+
+        member do
+          post 'hang'
+        end
     end
   resources :celebrities
   

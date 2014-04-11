@@ -82,8 +82,8 @@ Pincouture::Application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => ENV['pincoutoure'],
-    :access_key_id => ENV['AKIAJ5T7QRFHCTGPYATA'],
-    :secret_access_key => ENV['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']
+    :access_key_id => ENV[' '],
+    :secret_access_key => ENV['']
     }
   }
 end

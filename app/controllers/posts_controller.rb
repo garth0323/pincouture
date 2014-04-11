@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:show, :index]
-  before_action :set_pin, only: [:new, :index, :edit, :create]
+  before_action :set_pin, only: [:new, :index, :edit, :create, :show]
 
   def index
     @posts = @pin.posts.order("created_at DESC")
