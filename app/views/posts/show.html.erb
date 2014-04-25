@@ -1,3 +1,7 @@
+<p>
+          <%= link_to 'Buy Now', @post.link, class: "btn btn-info" %> 
+          <%= link_to image_tag("hang-it.png", size: "40x25", alt: "hang it"), hang_pin_path %> 
+        </p>
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
@@ -6,10 +10,6 @@
         <h3><%= @post.title %> </h3>
         <p><%= @post.description %></p>
         <p>reccommended by: <strong><%= @post.user.username %></strong></p>
-        <p>
-          <%= link_to 'Buy Now', @post.link, class: "btn btn-info" %> 
-          <%= link_to image_tag("hang-it.png", size: "180x25", alt: "hang it"), root_path %> 
-        </p>
       </div>
     </div>
   </div>

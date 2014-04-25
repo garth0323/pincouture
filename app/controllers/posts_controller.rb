@@ -43,6 +43,12 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  def hang
+    Hang.create(hangable: @post, user: current_user, vote: params[:post])
+    flash[:notice] = "Hung in your closet!"
+    redirect_to pin_post_path(@post)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
