@@ -33,7 +33,13 @@ class UsersController < ApplicationController
 			render :edit
 		end
 	end
-
+  
+  def closet
+    
+  end
+  
+  private
+  
 	def user_params
 		params.require(:user).permit!
 	end

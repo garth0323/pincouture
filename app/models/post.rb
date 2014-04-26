@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :pin
 	has_many :hangs
+  has_many :users, :through => :hangs
 	has_many :users, :through => :categorizations
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 

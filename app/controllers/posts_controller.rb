@@ -44,9 +44,15 @@ class PostsController < ApplicationController
   end
 
   def hang
-    Hang.create(hangable: @post, user: current_user, vote: params[:post])
-    flash[:notice] = "Hung in your closet!"
-    redirect_to pin_post_path(@post)
+    @user = (session[:user_id])
+    @hang = Hang.create(user_id: @user, post_id: (params[:id]))
+    
+    if @hang.save
+      flash[:notice] = "Hung in your closet!"
+  		redirect_to root_path
+  	else
+  		render :new
+  	end
   end
 
   private

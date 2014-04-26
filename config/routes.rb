@@ -1,15 +1,20 @@
 Pincouture::Application.routes.draw do
   
   root to: "pins#index"
+ 
   resources :users
+    resources :users do
+      member do
+        get 'closet'
+      end
+    end
+  
   get '/about', to: 'pages#about'
   resources :pins
     resources :pins do
-      resources :posts
-
-        member do
-          post 'hang'
-        end
+      resources :posts do
+        get 'hang', on: :member
+      end
     end
   resources :celebrities
   
