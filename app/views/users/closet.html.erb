@@ -1,13 +1,9 @@
-<div class="jumbotron">
-  <h1>Welcome to your closet!</h1>
-</div>
-
 <div id="pins" class="transitions-enabled">
-
   <% @user.hangs.each do |hang| %>
     <% post = Post.find(hang.post_id) %>
+    <% pin = post.pin_id %>
     <div class="box panel panel-default text-center">
-      <%= link_to image_tag(post.image.url(:medium)), root_path %>
+      <%= link_to image_tag(post.image.url(:medium)), pin_post_path(pin, post) %>
       <div class="panel-body">
         <%= post.title %>
       </div>

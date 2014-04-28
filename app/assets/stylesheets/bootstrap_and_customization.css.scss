@@ -8,6 +8,15 @@
   background: #E86CE8;
 }
 
+body { padding-top: 50px; }
+
+.navbar {
+    margin-bottom:0;
+  }
+  .jumbotron {
+      margin-bottom:0;
+    }
+
 .carousel .item {
     width: 100%; /*slider width*/
     max-height: 600px; /*slider height*/
