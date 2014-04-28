@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 	end
   
   def closet
-    
+  	@user = User.find(session[:user_id])
   end
   
   private
