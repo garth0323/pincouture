@@ -1,15 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="text-center">
-      <%= link_to 'All Pins', pins_path, class: "btn btn-info" %>
-      <%= link_to "Add Clothes", new_pin_post_path(@pin), class: "btn btn-info" %>
-      <%= link_to "See Clothes", pin_posts_path(@pin), class: "btn btn-info" %>
-    </div>
-  </div>
-</div>
-
 <div class="row text-center">
-  <div class="col-md-offset-2 col-md-8">
+  <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading center">
         <p><strong><%= link_to @pin.celebrity.name, celebrity_path(@pin.celebrity) %></strong></p>
@@ -30,6 +20,13 @@
             <% end %>
           </div>
         <% end %>
+        <div class="row">
+          <div class="text-center">
+            <%= link_to 'All Pins', pins_path, class: "btn btn-info" %>
+            <%= link_to "Add Clothes", new_pin_post_path(@pin), class: "btn btn-info" %>
+            <%= link_to "See Clothes", pin_posts_path(@pin), class: "btn btn-info" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
