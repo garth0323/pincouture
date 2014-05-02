@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140406173523) do
 
   create_table "pins", force: true do |t|
     t.string   "description"
+    t.string   "image_url"
     t.integer  "celebrity_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140406173523) do
     t.string   "title"
     t.string   "host"
     t.string   "link"
+    t.string   "image_url"
     t.text     "description"
     t.integer  "user_id"
     t.integer  "pin_id"

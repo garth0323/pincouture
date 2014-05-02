@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
     	t.string :title
     	t.string :host
     	t.string :link
+      t.string :image_url
     	t.text :description
     	t.integer :user_id
     	t.integer :pin_id

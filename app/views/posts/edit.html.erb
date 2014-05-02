@@ -1,11 +1,42 @@
-<%= bootstrap_form_for  @post, url: {action: "update"}, html: { multipart: true } do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_field :description %>
-  <div class="form-group">
-    <p><strong>URL of image:</strong></p>
-    <%= text_field_tag :image_url %>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag(@post.image.url(:medium)) %>
+      <div class="caption">
+        <h3><%= @post.title %> </h3>
+        <p><%= @post.description %></p>
+        <p>reccommended by: <strong><%= @post.user.username %></strong></p>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
-<% end %>
+
+
+
+<div class="col-sm-6 col-md-6">
+<!-- Nav tabs -->
+	<ul class="nav nav-tabs">
+	  <li class="active"><a href="#home" data-toggle="tab">Add Pic from Web</a></li>
+	  <li><a href="#profile" data-toggle="tab">Upload the Pic</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+	  <div class="tab-pane active" id="home">
+	  	<%= bootstrap_form_for  @post, url: {action: "update"}, html: { multipart: true } do |f| %>
+		    <%= f.text_field :title %>
+		    <%= f.text_field :description %>
+		    <%= f.text_field :image_url %>
+		    <%= f.submit class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	  <div class="tab-pane" id="profile">
+	  	<%= bootstrap_form_for  @post, url: {action: "update"}, html: { multipart: true } do |f| %>
+		    <%= f.text_field :title %>
+		    <%= f.text_field :description %>
+		    <%= f.file_field :image %>
+		    <%= f.submit class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+	</div>
+</div>
