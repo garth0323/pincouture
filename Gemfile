@@ -16,6 +16,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'metainspector'
 gem 'aws-sdk', '~> 1.20.0'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 

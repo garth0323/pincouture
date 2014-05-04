@@ -10,34 +10,3 @@
 
 body { padding-top: 50px; }
 
-.navbar {
-    margin-bottom:0;
-  }
-  .jumbotron {
-      margin-bottom:0;
-    }
-
-.carousel .item {
-    width: 100%; /*slider width*/
-    max-height: 600px; /*slider height*/
-}
-.carousel .item img {
-    width: 100%; /*img width*/
-}
-/*full width container*/
-@media (max-width: 767px) {
-    .block {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
-}
-
-body.modal-open #wrap{
-    -webkit-filter: blur(14px);
-    -moz-filter: blur(30px);
-    -o-filter: blur(30px);
-    -ms-filter: blur(30px);
-    filter: blur(30px);
-}
-  
-.modal-backdrop {background: #f7f7f7;}
