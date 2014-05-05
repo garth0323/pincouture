@@ -1,3 +1,7 @@
+<div class="page-header">
+  <h1>Does this look correct?</h1>
+</div>
+
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
@@ -26,7 +30,7 @@
 		    <%= f.text_field :title %>
 		    <%= f.text_field :description %>
 		    <%= f.text_field :image_url %>
-		    <%= f.submit class: "btn btn-primary" %>
+		    <%= f.submit "See Your Post", class: "btn btn-primary" %>
 			<% end %>
 		</div>
 	  <div class="tab-pane" id="profile">
@@ -34,7 +38,7 @@
 		    <%= f.text_field :title %>
 		    <%= f.text_field :description %>
 		    <%= f.file_field :image %>
-		    <%= f.submit class: "btn btn-primary" %>
+		    <%= f.submit "See Your Post", class: "btn btn-primary" %>
 			<% end %>
 		</div>
 	</div>

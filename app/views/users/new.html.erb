@@ -1,6 +1,18 @@
+<div class="page-header">
+  <h1>Register as a Couturier <small>Enjoy pinning new outfits</small></h1>
+</div>
+
 <%= bootstrap_form_for @user do |f| %>
-  <%= f.email_field :email %>
-  <%= f.text_field :username %>
-  <%= f.password_field :password %>
-  <%= f.submit "Register as a Couturier", class: 'btn btn-large btn-primary' %>
+  <div class="col-sm-4">
+	  <%= f.email_field :email %>
+	</div>
+	<div class="col-sm-4">
+	  <%= f.text_field :username %>
+	</div>
+	<div class="col-sm-4">
+	  <%= f.password_field :password %>
+	</div>
+	<div class="col-sm-4">
+	  <%= f.submit "Register as a Couturier", class: 'btn btn-large btn-primary' %>
+	</div>
 <% end %>

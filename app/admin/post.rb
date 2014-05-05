@@ -1,4 +1,11 @@
 ActiveAdmin.register Post do
+  index do
+    column :title
+    column :link
+    column :description
+
+    default_actions
+  end
 
   
   # See permitted parameters documentation:

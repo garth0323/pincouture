@@ -8,4 +8,6 @@ class Post < ActiveRecord::Base
 	def image_from_url(url)
     self.image = open(url)
   end
+
+  validates :link, presence: :true
 end

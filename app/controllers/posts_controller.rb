@@ -24,7 +24,7 @@ class PostsController < ApplicationController
                               user_id: current_user[:id], pin_id: params[:pin_id], image: page.image)
     
     if @post.save
-      redirect_to edit_pin_post_path(@pin, @post), notice: 'Confirm Info and Picture of Clothing' #change when posts are made
+      redirect_to edit_pin_post_path(@pin, @post)
     else
       render action: 'new'
     end

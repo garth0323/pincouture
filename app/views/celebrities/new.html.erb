@@ -1,29 +1,10 @@
-<%= form_for @celebrity do |f| %>
-  <% if @celebrity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@celebrity.errors.count, "error") %> prohibited this pin from being saved:</h2>
+<div class="page-header">
+  <h1>Add a Celebrity</h1>
+</div>
 
-      <ul>
-      <% @celebrity.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= radio_button_tag(:gender, "female") %>
-    <%= label_tag(:gender_female, "Female Celebrity") %>
-  </div>
-  <div class="form-group">
-    <%= radio_button_tag(:gender, "male") %>
-    <%= label_tag(:gender_male, "Male Celebrity") %>
-  </div>
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
+<%= bootstrap_form_for @celebrity do |f| %>
+  <%= f.text_field :name, label: "Celebrity", inline: true %>
+  <%= f.radio_button :gender, 'female', label: "Female Celebrity", checked: true, inline: true %>
+  <%= f.radio_button :gender, 'male', label: "Male Celebrity", inline: true %>
+  <%= f.submit "Add Celebrity", class: 'btn btn-large btn-primary', inline: true %>
 <% end %>

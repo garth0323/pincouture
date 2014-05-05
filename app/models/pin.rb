@@ -7,5 +7,7 @@ class Pin < ActiveRecord::Base
 	def image_from_url(url)
     self.image = open(url)
   end
+
+  validates :description, presence: :true
 end
 

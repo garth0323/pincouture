@@ -1,4 +1,8 @@
+<div class="page-header">
+  <h1>Add Clothes</h1>
+</div>
+
 <%= bootstrap_form_for [@pin, @post], html: { multipart: true } do |f| %>
     <%= f.text_field :link %>
-    <%= f.submit class: "btn btn-info" %>
+    <%= f.submit "Add Clothes", class: "btn btn-info" %>
 <% end %>

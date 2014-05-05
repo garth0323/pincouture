@@ -1,4 +1,11 @@
 ActiveAdmin.register Pin do
+  index do
+    column :id
+    column :description
+    column :celebrity
+    column :user
+
+  end
 
   
   # See permitted parameters documentation:
