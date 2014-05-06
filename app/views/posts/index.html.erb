@@ -3,8 +3,8 @@
     <div class="box panel panel-default text-center">
       <%= link_to image_tag(post.image.url(:medium)), pin_post_path(@pin, post) %>
       <div class="panel-body">
-        <%= post.user.username %>
-        <strong><%= link_to post.host, post.link %></strong>
+        <p><strong><%= link_to post.host, post.link %></strong></p>
+        <%= post.title %>
         <% if current_user && post.user == current_user %>
           <div class="actions">
             <%= link_to edit_pin_post_path(@pin, post) do %>

@@ -1,3 +1,8 @@
+<div class="text-center">
+  <h1><%= @user.username %>'s Closet</h1>
+  <hr/>
+</div>
+
 <div id="pins" class="transitions-enabled">
   <% @user.hangs.each do |hang| %>
     <% post = Post.find(hang.post_id) %>
@@ -5,7 +10,7 @@
     <div class="box panel panel-default text-center">
       <%= link_to image_tag(post.image.url(:medium)), pin_post_path(pin, post) %>
       <div class="panel-body">
-        <%= post.title %>
+        <%= post.host %>
       </div>
     </div>
   <% end %>
