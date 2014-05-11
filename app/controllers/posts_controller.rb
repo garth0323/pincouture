@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:show, :index]
+  before_action :require_user, except: [:show]
   before_action :set_pin, only: [:new, :index, :edit, :create, :show]
 
   def index
@@ -74,4 +74,6 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:description, :image, :title)
     end
+
+
 end
