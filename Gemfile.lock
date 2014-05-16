@@ -83,6 +83,9 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
     has_scope (0.6.0.rc)
@@ -223,6 +226,7 @@ DEPENDENCIES
   bootstrap-will_paginate (~> 0.0.10)
   bootstrap_form
   coffee-rails (~> 4.0.0)
+  figaro
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
