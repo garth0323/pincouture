@@ -6,10 +6,11 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.signup_confirmation.subject
   #
-  def signup_confirmation
+  def signup_confirmation(user)
+    @user = user
     mail(
       :subject => 'hello',
-      :to      => @user.email,
+      :to      =>  @user.email,
       :from    => 'info@pincouture.com',
       :tag     => 'signup'
     )

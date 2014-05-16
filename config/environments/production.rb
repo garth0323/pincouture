@@ -40,8 +40,8 @@ Pincouture::Application.configure do
     :address   => "smtp.mandrillapp.com",
     :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "ENV["mandrill_username"]",
-    :password  => "ENV["mandrill_password"]", # SMTP password is any valid API key
+    :user_name => "ENV['mandrill_username']",
+    :password  => "ENV['mandrill_password']", # SMTP password is any valid API key
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'pincouture.com', # your domain to identify your server when connecting
   }
@@ -93,8 +93,8 @@ Pincouture::Application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => ENV['pincoutoure'],
-    :access_key_id => ENV[' '],
-    :secret_access_key => ENV['']
+    :access_key_id => ENV['aws_access_key'],
+    :secret_access_key => ENV['aws_secret_key']
     }
   }
 end
