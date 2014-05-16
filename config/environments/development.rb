@@ -15,19 +15,21 @@ Pincouture::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  # change to true to allow email to be sent during development
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"
   #mandrill setup
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
-    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "ENV['mandrill_username']",
-    :password  => "ENV['mandrill_password']", # SMTP password is any valid API key
-    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :user_name => ENV['mandrill_username'],
+    :password  => ENV['mandrill_password'], # SMTP password is any valid API key
+    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
     :domain => 'pincouture.com', # your domain to identify your server when connecting
   }
-
-  config.action_mailer.default_url_options = {host: "localhost:3000"}
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
