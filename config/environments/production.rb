@@ -35,14 +35,22 @@ Pincouture::Application.configure do
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
 
+  config.action_mailer.default_url_options = { :host => 'pincouture.com' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
   #mandrill setup
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => ENV['mandrill_username'],
-    :password  => ENV['mandrill_password'], # SMTP password is any valid API key
-    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password  => ENV['MANDRILL_PASSWORD'], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'pincouture.com', # your domain to identify your server when connecting
   }
 
@@ -93,8 +101,8 @@ Pincouture::Application.configure do
   :storage => :s3,
   :s3_credentials => {
     :bucket => ENV['pincoutoure'],
-    :access_key_id => ENV['aws_access_key'],
-    :secret_access_key => ENV['aws_secret_key']
+    :access_key_id => ENV['AWS_ACCESS_KEY'],
+    :secret_access_key => ENV['AWS_SECRET_KEY']
     }
   }
 end

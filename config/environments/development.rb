@@ -25,9 +25,9 @@ Pincouture::Application.configure do
     :address   => "smtp.mandrillapp.com",
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => ENV['mandrill_username'],
-    :password  => ENV['mandrill_password'], # SMTP password is any valid API key
-    :authentication => 'plain', # Mandrill supports 'plain' or 'login'
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password  => ENV['MANDRILL_PASSWORD'], # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'pincouture.com', # your domain to identify your server when connecting
   }
   # Print deprecation notices to the Rails logger.
