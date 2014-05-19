@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			UserMailer.signup_confirmation(@user).deliver
-			session[:user_id] = @user.id
+			cookies[:auth_token] = @user.auth_token
 			flash[:notice] = "Welcome, you are registered"
 			redirect_to root_path
 		else

@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h1>Email Password Link</h1>
+  <hr/>
+</div>
+
+<%= bootstrap_form_for(:password_resets, url: password_resets_path) do |f| %>
+  <%= f.email_field :email %>
+  <%= f.submit "Email Reset Link", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,5 +1,6 @@
 Pincouture::Application.routes.draw do
   
+  get "password_resets/new"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: "pins#index"
@@ -21,10 +22,12 @@ Pincouture::Application.routes.draw do
   resources :celebrities
   
 
-  get '/register', to: 'users#new'
-  get '/login', to: 'sessions#new'
+  get '/register', to: 'users#new', :as => "signup"
+  get '/login', to: 'sessions#new', :as => "login"
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
+  resources :sessions
+  resources :password_resets
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
