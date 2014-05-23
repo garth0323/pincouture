@@ -26,15 +26,7 @@
 	            <%= image_tag("hang-buy.png", alt: "Hang your clothes in the virtual closet and then Purchase them!") %>
 	        </div>
 	        <div class="item">
-	            <img src="http://cdn.business2community.com/wp-content/uploads/2014/03/Shark-Tank.jpg" alt="Band performing 3">
-	            <% if !logged_in? %>
-	            <div class="carousel-caption text-center">
-	        			<p>
-		      				<%= link_to "Log in", login_path, class: "btn btn-default btn-lg"  %>
-		      				<%= link_to "Sign up", new_user_path, class: "btn btn-info btn-lg" %>
-		    				</p>
-	      			</div>
-	      			<% end %>
+	            <%= image_tag("contribute.png", alt: "Contribute to the PinCouture community!") %>
 	        </div>
 	    </div>
 
