@@ -44,14 +44,14 @@ class PostsController < ApplicationController
   end
 
   def hang
-    @user = (session[:user_id])
-    @hang = Hang.create(user_id: @user, post_id: (params[:id]))
+    @hang = Hang.create(user_id: current_user.id, post_id: (params[:id]))
     
     if @hang.save
       flash[:notice] = "Hung in your closet!"
   		redirect_to root_path
   	else
-  		render :new
+  		flash[:notice] = "There was a problem!"
+      redirect_to root_path
   	end
   end
 
