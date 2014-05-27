@@ -3,7 +3,7 @@ class PinsController < ApplicationController
   before_action :require_user, except: [:show, :index]
 
   def index
-    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
+    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
   end
 
   def show

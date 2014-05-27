@@ -13,6 +13,7 @@ Pincouture::Application.routes.draw do
     end
   
   get '/about', to: 'pages#about'
+  get '/privacy', to: 'pages#privacy'
   resources :pins
     resources :pins do
       resources :posts do
