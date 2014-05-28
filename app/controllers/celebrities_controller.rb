@@ -1,5 +1,6 @@
 class CelebritiesController < ApplicationController
-  
+  before_action :require_user, except: [:show, :index]
+
   def index
   	@celebrities = Celebrity.all.order("name ASC").paginate(:page => params[:page], :per_page => 8)
   end
@@ -15,7 +16,7 @@ class CelebritiesController < ApplicationController
 
 		if @celebrity.save
 			flash[:notice] = "Celebrity has been added"
-			redirect_to root_path
+			redirect_to celebrity_path(@celebrity)
 		else
 			render :new
 		end

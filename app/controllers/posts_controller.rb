@@ -48,7 +48,7 @@ class PostsController < ApplicationController
     
     if @hang.save
       flash[:notice] = "Hung in your closet!"
-  		redirect_to root_path
+  		redirect_to closet_user_path(current_user)
   	else
   		flash[:notice] = "There was a problem!"
       redirect_to root_path
