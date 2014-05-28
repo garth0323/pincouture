@@ -1,9 +1,7 @@
-ActiveAdmin.register Pin do
+ActiveAdmin.register Celebrity do
   index do
-    column :id
-    column :description
-    column :celebrity
-    column :user
+    column :name
+    column :gender
 
     default_actions
   end
