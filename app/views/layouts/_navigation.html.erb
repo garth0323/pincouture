@@ -29,10 +29,6 @@
               <li><%= link_to 'Add Celebrity', new_celebrity_path %></li>
               <li class="divider"></li>
               <li><%= link_to 'All Celebrities', celebrities_path %></li>
-               <li class="divider"></li>
-              <% Celebrity.all.each do |celebrity| %>
-                <li><%= link_to celebrity.name, celebrity_path(celebrity) %></li>
-              <% end %>
             </ul>
           </li>
           <% if logged_in? %>
