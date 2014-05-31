@@ -13,7 +13,6 @@
       </div>
       <div class="panel-body">
         <p><%= @pin.description %></p>
-        <p><strong><%= @pin.user.username if @pin.user %></strong></p>
         <% if current_user && @pin.user == current_user %>
           <div class="actions">
             <%= link_to edit_pin_path(@pin) do %>
