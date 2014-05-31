@@ -14,6 +14,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-left" role="search">
+          <%= bootstrap_form_tag(url: pins_path, layout: :inline) do |f| %>
+            <%= f.search_field :search, hide_label: :true, placeholder: "Search" %>
+            <%= f.submit "Search", class: "btn btn-default" %>
+          <% end %>
+        </form>
         <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About us <b class="caret"></b></a>
             <ul class="dropdown-menu">
