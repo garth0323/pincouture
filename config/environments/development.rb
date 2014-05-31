@@ -30,6 +30,9 @@ Pincouture::Application.configure do
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'pincouture.com', # your domain to identify your server when connecting
   }
+
+  GoogleTagManager.gtm_id = "GTM-N4G942" # Where GTM-XXXX is your container ID from Google Tag Manager
+  
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

@@ -88,6 +88,8 @@ GEM
       rails (>= 3, < 5)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
+    google-tag-manager-rails (0.1.3)
+      rails (>= 3.0.0)
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -226,12 +228,13 @@ DEPENDENCIES
   bootstrap-will_paginate (~> 0.0.10)
   bootstrap_form
   coffee-rails (~> 4.0.0)
-  figaro
+  figaro (= 0.7.0)
+  google-tag-manager-rails (= 0.1.3)
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
   masonry-rails (~> 0.2.0)
-  metainspector
+  metainspector (= 1.17.1)
   paperclip (~> 3.0)
   pg
   pry

@@ -14,11 +14,11 @@ gem 'jquery-turbolinks'
 gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-gem 'metainspector'
+gem 'metainspector', '1.17.1'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'figaro'
-
+gem 'figaro', '0.7.0'
+gem 'google-tag-manager-rails', '0.1.3'
 
 
 gem 'jquery-rails'

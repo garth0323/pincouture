@@ -54,6 +54,8 @@ Pincouture::Application.configure do
     :domain => 'pincouture.com', # your domain to identify your server when connecting
   }
 
+  GoogleTagManager.gtm_id = "GTM-N4G942" # Where GTM-XXXX is your container ID from Google Tag Manager
+
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
